@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Rent Estimator Calgary</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Get Rent Estimate for Calgary (Accurate to within $160!!)</h1>
+	<h2> Put in your requirements for the type of rental you want in Calgary and press 'predict' to get a monthly estimate.  The predicted amount will be correct to within $160 of what you will find on doing a real life search on the ground (all thanks to machine-learning).  </h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <label for="parking_status">Parking:</label>
+        <select id="parking_status" name="parking_status">
+          <option value="Yes">Protected Parking</option>
+          <option value="No">Unprotected Parking</option>
+        </select>
+        <label for="pet_status">Pets:</label>
+        <select id="pet_status" name="pet_status">
+          <option value="Yes">Pet Friendly</option>
+          <option value="No">Not Pet Friendly</option>
+        </select>
+
+
+		<input type="text" name="building_score" placeholder="Building Score (0-28)" required="required" />
+		<input type="text" name="property_score" placeholder="Property Score (0-24)" required="required" />
+		<input type="text" name="area" placeholder="Area (300-3000 sq. feet)" required="required" />
+		<input type="text" name="baths" placeholder="No. of Baths (1-5)" required="required" />
+		<input type="text" name="beds" placeholder="No. of Beds (1-6)" required="required" />
+
+        <label for="neighbourhood">Neighbourhood:</label>
+        <select id="neighbourhood" name="neighbourhood">
+          <option value="Downtown">Downtown</option>
+          <option value="Beltline">Beltline</option>
+          <option value="Lower Mount Royal">Lower Mount Royal</option>
+          <option value="Applewood">Applewood</option>
+          <option value="Bankview">Bankview</option>
+          <option value="Mission">Mission</option>
+          <option value="Victoria Park">Victoria Park</option>
+          <option value="Skyview">Skyview</option>
+          <option value="Hillhurst">Hillhurst</option>
+          <option value="Sunalta">Crescent Heights</option>
+          <option value="Eau Claire">Eau Claire</option>
+          <option value="Kingsland">Kingsland</option>
+          <option value="South Calgary">South Calgary</option>
+          <option value="Varsity">Varsity</option>
+          <option value="Brentwood">Brentwood</option>
+          <option value="Radisson Heights">Radisson Heights</option>
+          <option value="Bridgeland">Bridgeland</option>
+          <option value="Haysboro">Haysboro</option>
+          <option value="Bowness">Bowness</option>
+          <option value="Capitol Hill">Capitol Hill</option>
+          <option value="Connaught">Connaught</option>
+          <option value="Sunnyside">Sunnyside</option>
+          <option value="Spruce Cliff">Spruce Cliff</option>
+          <option value="Inglewood">Inglewood</option>                    
+        </select>
+        
+        <label for="listing_type">Listing Type:</label>
+        <select id="listing_type" name="listing_type">
+          <option value="Apartment">Apartment</option>
+          <option value="Shared">Shared</option>
+          <option value="Basement">Basement</option>
+          <option value="Condo">Condo</option>
+          <option value="Duplex">Duplex</option>
+          <option value="House">House</option>
+          <option value="Loft">Loft</option>
+          <option value="Main">Main</option>
+          <option value="Townhouse">Townhouse</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
+
+
+
