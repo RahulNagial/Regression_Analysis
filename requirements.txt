@@ -8,4 +8,4 @@ numpy>=1.20.2
 Werkzeug==1.0.1
 xgboost==1.4.2
 scikit-learn==0.23.1
-scipy==1.5.0
+
