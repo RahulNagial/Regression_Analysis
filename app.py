@@ -8,7 +8,7 @@ Created on Thu Apr 15 16:46:24 2021
 # ref: https://github.com/krishnaik06/Heroku-Demo/blob/master/app.py
 # first I import the required libraries below
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template
 import pickle
 
 # creating empty list to populate and serve as input for model prediction 
