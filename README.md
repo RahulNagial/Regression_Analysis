@@ -5,7 +5,7 @@
 * Engineered features (such as number of beds/baths, neighbourhood, square footage, monthly rent) from raw data.
 * Performed exploratory data analysis to remove outliers and shortlist variables for machine learning model building.
 * Optimized Ridge, Random Forest and XGBoost regression using GridsearchCV.
-* Built a client facing API using Flask and deployed it on a local webserver. 
+* Built a client facing API using Flask and deployed it on Heroku cloud platform. 
 
 This project will potentially benefit:
 * Immigrants - newcomers to the city would be interested in knowing how much is the monthly rent so they can plan accordingly.
@@ -85,18 +85,12 @@ The XGBoost model far outperformed the other approaches on the training and test
 *	**XGBoost Regression**: MAE = $160
 
 ## Productionization 
-In this step, I built a Flask API endpoint that was hosted on a local webserver. The API endpoint rendered a HTML GUI which takes in a request with a list of features regarding the listing and returns an estimated monthly rent for such a listing. 
+In this step, I built a Flask API endpoint that was hosted on Heroku cloud platform. Therefore, the rent predictor tool was deployed and made accessible as a product to potential users online.
 
-In the image below the rendered HTML GUI hosted on local webserver is shown.
-
-<img src="https://user-images.githubusercontent.com/80373488/117215117-0471f980-adbb-11eb-8b1d-ac96d0b55c7c.png" width="1000" height="200">
-
-On putting in the paramters and clicking on *predict*, the GUI returns the expected monthly rent for such a listing in Calgary (refer image below).
-
-<img src="https://user-images.githubusercontent.com/80373488/117215135-0d62cb00-adbb-11eb-8e6d-5b0620397caf.png" width="1000" height="250">
+Link to tool: https://rentpredictor-calgary.herokuapp.com/  
 
 ## Future Improvements
 There is scope for improvement in this project in the following areas:
-* The model was deployed only on local webserver. In order to make it accessible to anyone online, it should be deployed on cloud servers like Heroku or AWS EC2 instance.
+
 * Natural Language Processing (NLP) can be used to gain insights in the rental listing text.
 * Transformations can be applied on left/right skewed variables to convert them to Gaussian distribution and see if this improves model accuracy.
