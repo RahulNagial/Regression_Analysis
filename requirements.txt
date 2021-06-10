@@ -7,7 +7,7 @@ MarkupSafe==2.0.1
 numpy>=1.20.2
 Werkzeug==1.0.1
 xgboost==1.4.2
-scikit-learn==0.23.1
+scikit-learn>=0.18
 joblib==0.16.0
 scipy>=0.15.1
 threadpoolctl==2.1.0
