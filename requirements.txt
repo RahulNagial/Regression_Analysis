@@ -8,4 +8,9 @@ numpy>=1.20.2
 Werkzeug==1.0.1
 xgboost==1.4.2
 scikit-learn==0.23.1
+joblib==0.16.0
+scipy==1.5.0
+threadpoolctl==2.1.0
+matplotlib>=1.4.3
+pandas>=0.19
 
